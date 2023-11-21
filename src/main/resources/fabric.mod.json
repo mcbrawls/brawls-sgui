@@ -1,0 +1,24 @@
+{
+    "schemaVersion": 1,
+    "id": "brawls-sgui",
+    "version": "${version}",
+    "name": "sgui (Brawls)",
+    "authors": [
+        "Andante"
+    ],
+    "contact": {
+        "homepage": "https://github.com/mcbrawls/brawls-sgui",
+        "sources": "https://github.com/mcbrawls/brawls-sgui",
+        "issues": "https://github.com/mcbrawls/brawls-sgui/issues"
+    },
+    "license": "MIT",
+    "icon": "assets/brawls-sgui/icon.png",
+    "environment": "*",
+    "depends": {
+        "minecraft": "~1.20.2",
+        "java": ">=17",
+        "fabric-api": ">=0.90",
+        "fabric-language-kotlin": ">=1.9",
+        "sgui": "*"
+    }
+}
