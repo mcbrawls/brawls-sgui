@@ -15,7 +15,7 @@
     "icon": "assets/brawls-sgui/icon.png",
     "environment": "*",
     "depends": {
-        "minecraft": ">=1.21",
+        "minecraft": ">=1.21-beta",
         "java": ">=17",
         "fabric-api": ">=0.90",
         "fabric-language-kotlin": ">=1.9",
