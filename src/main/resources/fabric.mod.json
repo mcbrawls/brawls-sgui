@@ -20,5 +20,6 @@
         "fabric-api": ">=0.90",
         "fabric-language-kotlin": ">=1.9",
         "sgui": "*"
-    }
+    },
+    "mixins": [ "brawls-sgui.mixins.json" ]
 }
