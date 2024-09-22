@@ -30,6 +30,14 @@ interface ParentedGui {
         }
 
         /**
+         * Gets this GUI's parent GUI.
+         */
+        fun GuiInterface.getGuiParent() : GuiInterface? {
+            val parented = this as? ParentedGui ?: return null
+            return parented.parent
+        }
+
+        /**
          * Opens a GUI's parent GUI.
          */
         fun GuiInterface.openGuiParent(): GuiInterface {
