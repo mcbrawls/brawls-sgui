@@ -22,7 +22,7 @@ public abstract class HotbarGuiMixin extends BaseSlotGui {
         setSelectedSlot(player.getInventory().selectedSlot);
     }
 
-    @Inject(method = "onSelectedSlotChange", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "onSelectedSlotChange", at = @At("HEAD"), cancellable = true, remap = false)
     private void onSelectedSlotChange(int slot, CallbackInfoReturnable<Boolean> cir) {
         setSelectedSlot(slot);
         player.getInventory().selectedSlot = slot;
