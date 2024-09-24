@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(HotbarGui.class)
 public abstract class HotbarGuiMixin extends BaseSlotGui {
-    @Shadow public abstract void setSelectedSlot(int value);
+    @Shadow(remap = false) public abstract void setSelectedSlot(int value);
 
     private HotbarGuiMixin(ServerPlayerEntity player, int size) {
         super(player, size);
