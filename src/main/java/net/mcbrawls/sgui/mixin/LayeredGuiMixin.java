@@ -28,8 +28,9 @@ public abstract class LayeredGuiMixin implements SlotGuiInterface, ParentedGui {
 
     @Override
     public void onClose() {
-        if (parent != null && !parent.canPlayerClose()) {
-            parent.open();
+        GuiInterface firstParent = ParentedGui.Companion.getFirstParent(this);
+        if (firstParent != null && !firstParent.canPlayerClose()) {
+            firstParent.open();
         }
     }
 }

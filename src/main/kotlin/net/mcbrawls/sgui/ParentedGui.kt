@@ -42,6 +42,7 @@ interface ParentedGui {
          */
         fun GuiInterface.getFirstParent(): GuiInterface? {
             var parent = getGuiParent() ?: return null
+
             while (true) {
                 parent = parent.getGuiParent() ?: break
             }
