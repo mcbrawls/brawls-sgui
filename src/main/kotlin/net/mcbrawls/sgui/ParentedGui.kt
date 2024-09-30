@@ -38,6 +38,25 @@ interface ParentedGui {
         }
 
         /**
+         * Gets the top-most parent in the parent heirarchy.
+         */
+        fun GuiInterface.getFirstParent(): GuiInterface? {
+            var parent = getGuiParent() ?: return null
+            while (true) {
+                parent = parent.getGuiParent() ?: break
+            }
+
+            return parent
+        }
+
+        /**
+         * Whether this gui has a parent.
+         */
+        fun GuiInterface.hasParent(): Boolean {
+            return getGuiParent() != null
+        }
+
+        /**
          * Opens a GUI's parent GUI.
          */
         fun GuiInterface.openGuiParent(): GuiInterface {

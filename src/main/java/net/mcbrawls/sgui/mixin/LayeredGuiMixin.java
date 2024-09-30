@@ -1,6 +1,7 @@
 package net.mcbrawls.sgui.mixin;
 
 import eu.pb4.sgui.api.gui.GuiInterface;
+import eu.pb4.sgui.api.gui.SlotGuiInterface;
 import eu.pb4.sgui.api.gui.layered.LayeredGui;
 import net.mcbrawls.sgui.ParentedGui;
 import org.jetbrains.annotations.Nullable;
@@ -8,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(LayeredGui.class)
-public abstract class LayeredGuiMixin implements ParentedGui {
+public abstract class LayeredGuiMixin implements SlotGuiInterface, ParentedGui {
     @Unique
     @Nullable
     private GuiInterface parent = null;
@@ -23,5 +24,12 @@ public abstract class LayeredGuiMixin implements ParentedGui {
     @Override
     public void setParent(@Nullable GuiInterface parent) {
         this.parent = parent;
+    }
+
+    @Override
+    public void onClose() {
+        if (parent != null && !parent.canPlayerClose()) {
+            parent.open();
+        }
     }
 }
