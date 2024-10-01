@@ -21,5 +21,6 @@
         "fabric-language-kotlin": ">=1.9",
         "sgui": "*"
     },
-    "mixins": [ "brawls-sgui.mixins.json" ]
+    "mixins": [ "brawls-sgui.mixins.json" ],
+    "accessWidener": "brawls-sgui.accesswidener"
 }

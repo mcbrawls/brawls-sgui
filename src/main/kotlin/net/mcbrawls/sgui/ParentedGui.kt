@@ -23,7 +23,7 @@ interface ParentedGui {
         /**
          * Sets this GUI's parent GUI.
          */
-        fun GuiInterface.setGuiParent(parent: GuiInterface) : GuiInterface {
+        fun GuiInterface.setGuiParent(parent: GuiInterface?) : GuiInterface {
             val parented = this as? ParentedGui ?: return this
             parented.parent = parent
             return this

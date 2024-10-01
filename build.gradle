@@ -27,7 +27,10 @@ repositories {
     }
 }
 
-loom.splitEnvironmentSourceSets()
+loom {
+    accessWidenerPath = file("src/main/resources/${mod_id}.accesswidener")
+    splitEnvironmentSourceSets()
+}
 
 sourceSets {
     test {
