@@ -28,6 +28,8 @@ public abstract class BackendSimpleGuiMixin implements SlotGuiInterface, Parente
 
     @Override
     public void onClose() {
+        this.gui.onClose();
+
         GuiInterface firstParent = ParentedGui.Companion.getFirstParent(this.gui);
         if (firstParent != null && !firstParent.canPlayerClose()) {
             firstParent.open();
