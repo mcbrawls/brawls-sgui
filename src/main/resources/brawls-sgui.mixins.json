@@ -4,7 +4,8 @@
     "package": "net.mcbrawls.sgui.mixin",
     "mixins": [
         "BackendSimpleGuiMixin",
-        "BaseSlotMixin",
+        "BaseSlotGuiMixin",
+        "GuiInterfaceMixin",
         "LayeredGuiMixin"
     ],
     "compatibilityLevel": "JAVA_17",

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(BaseSlotGui.class)
-public abstract class BaseSlotMixin implements SlotGuiInterface, ParentedGui {
+public abstract class BaseSlotGuiMixin implements SlotGuiInterface, ParentedGui {
     @Unique
     @Nullable
     private GuiInterface parent = null;
@@ -28,7 +28,7 @@ public abstract class BaseSlotMixin implements SlotGuiInterface, ParentedGui {
 
     @Override
     public void onClose() {
-        GuiInterface firstParent = ParentedGui.Companion.getFirstParent(this);
+        GuiInterface firstParent = this.getFirstParent();
         if (firstParent != null && !firstParent.canPlayerClose()) {
             firstParent.open();
         }

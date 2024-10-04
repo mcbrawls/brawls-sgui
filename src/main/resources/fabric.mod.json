@@ -22,5 +22,11 @@
         "sgui": "*"
     },
     "mixins": [ "brawls-sgui.mixins.json" ],
-    "accessWidener": "brawls-sgui.accesswidener"
+    "accessWidener": "brawls-sgui.accesswidener",
+    "custom": {
+        "loom:injected_interfaces": {
+            "eu/pb4/sgui/api/gui/GuiInterface": [ "net/mcbrawls/sgui/BasedGui" ],
+            "eu/pb4/sgui/api/gui/layered/LayeredGui": [ "net/mcbrawls/sgui/ParentedGui" ]
+        }
+    }
 }
