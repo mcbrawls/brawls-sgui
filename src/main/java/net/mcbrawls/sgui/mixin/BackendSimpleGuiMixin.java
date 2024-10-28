@@ -16,6 +16,11 @@ import org.spongepowered.asm.mixin.Unique;
 public abstract class BackendSimpleGuiMixin implements SlotGuiInterface, ParentedGui, BasedGui {
     @Shadow @Final public LayeredGui gui;
 
+    @Override
+    public boolean canPlayerClose() {
+        return this.gui.canPlayerClose();
+    }
+
     @Unique
     @Override
     public @Nullable GuiInterface getParent() {
